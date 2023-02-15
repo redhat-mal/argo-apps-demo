@@ -11,7 +11,7 @@ metadata:
   labels:
     machine.openshift.io/cluster-api-cluster: cluster-k98gd-z9zvj
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       machine.openshift.io/cluster-api-cluster: cluster-k98gd-z9zvj
