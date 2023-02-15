@@ -1,0 +1,24 @@
+apiVersion: redhatcop.redhat.io/v1alpha1
+kind: NamespaceConfig
+metadata:
+  name: medium-size
+spec:
+  annotationSelector: {}
+  labelSelector:
+    matchLabels:
+      size: medium
+  templates:
+    - excludedPaths:
+        - .metadata
+        - .status
+        - .spec.replicas
+      objectTemplate: |
+        apiVersion: v1
+        kind: ResourceQuota
+        metadata:
+          name: small-medium
+          namespace: {{ .Name }}  
+        spec:
+          hard:
+            requests.cpu: "8"
+            requests.memory: "8Gi"
