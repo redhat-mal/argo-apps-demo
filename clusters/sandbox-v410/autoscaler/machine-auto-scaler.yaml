@@ -1,12 +1,12 @@
 apiVersion: "autoscaling.openshift.io/v1beta1"
 kind: "MachineAutoscaler"
 metadata:
-  name: "worker-us-east-1a" 
+  name: "worker-us-east-2a" 
   namespace: "openshift-machine-api"
 spec:
-  minReplicas: 3 
+  minReplicas: 2 
   maxReplicas: 12 
   scaleTargetRef: 
     apiVersion: machine.openshift.io/v1beta1
     kind: MachineSet 
-    name: aro-cluster-8vjhx-tjqn2-worker-eastus1
+    name: cluster-k98gd-z9zvj-worker-us-east-2a
