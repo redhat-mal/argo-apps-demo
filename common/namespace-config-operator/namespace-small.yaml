@@ -2,6 +2,8 @@ apiVersion: redhatcop.redhat.io/v1alpha1
 kind: NamespaceConfig
 metadata:
   name: small-size
+  annotations:
+    argocd.argoproj.io/sync-options: Validate=false
 spec:
   annotationSelector: {}
   labelSelector:
