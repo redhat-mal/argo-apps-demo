@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - ./machinesets
 - ./autoscaler
+- ./namespaces
 
 bases:
 - ../../common/namespace-config-operator/ 
