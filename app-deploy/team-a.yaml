@@ -1,25 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spring-dev
+  generation: 10
+  name: dev-team-b
+  namespace: openshift-gitops
 spec:
   destination:
     namespace: dev-team-a
-    server: https://kubernetes.default.svc
-  ignoreDifferences:
-    - group: apps
-      jsonPointers:
-        - /spec/replicas
-      kind: Deployment
-    #- jsonPointers:
-    #    - /data
-    #  kind: ConfigMap
+    server: 'https://kubernetes.default.svc'
   project: default
   source:
     chart: spring-dev
-    repoURL: https://malacourse.github.io/spring-rest
-    targetRevision: 2022-12-14-445887
     helm:
+      valueFiles:
+        - values.yaml
       parameters:
         - name: ocp-deployment.lastUpdated
           value: ""
@@ -27,8 +21,9 @@ spec:
           value: 2022-12-14-445887
         - name: ocp-deployment.image.repository
           value: 'quay.io/mlacourse/spring-rest-demo'
+    repoURL: 'https://malacourse.github.io/spring-rest'
+    targetRevision: 2022-12-14-445887
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
 
