@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spring-dev
+spec:
+  destination:
+    namespace: team-a
+    server: https://kubernetes.default.svc
+  ignoreDifferences:
+    - group: apps
+      jsonPointers:
+        - /spec/replicas
+      kind: Deployment
+    #- jsonPointers:
+    #    - /data
+    #  kind: ConfigMap
+  project: default
+  source:
+    chart: spring-dev
+    repoURL: https://malacourse.github.io/spring-rest
+    targetRevision: 2022-12-14-445887
+    helm:
+      parameters:
+        - name: ocp-deployment.lastUpdated
+          value: ""
+        - name: ocp-deployment.image.tag
+          value: 2022-12-14-445887
+        - name: ocp-deployment.image.repository
+          value: 'quay.io/mlacourse/spring-rest-demo'
+  syncPolicy:
+    automated:
+      prune: true
+      #selfHeal: true
+
