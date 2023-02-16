@@ -14,8 +14,15 @@ spec:
     helm:
       valueFiles:
         - values.yaml
+      parameters:
+        - name: ocp-deployment.lastUpdated
+          value: ""
+        - name: ocp-deployment.image.tag
+          value: 2022-12-14-445887
+        - name: ocp-deployment.image.repository
+          value: 'quay.io/mlacourse/spring-rest-demo'
     repoURL: 'https://malacourse.github.io/spring-rest'
-    targetRevision: 2022-12-16-b258ff
+    targetRevision: 2022-12-14-445887
   syncPolicy:
     automated:
       selfHeal: true

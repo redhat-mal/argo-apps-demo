@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: namespace-config-operator
+  name: namespace-configuration-operator
   labels:
-    kubernetes.io/metadata.name: namespace-config-operator
+    kubernetes.io/metadata.name: namespace-configuration-operator
