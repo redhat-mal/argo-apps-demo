@@ -12,11 +12,4 @@ metadata:
   name: dev-team-b
   labels:
     size: medium
----
-kind: Namespace
-apiVersion: v1
-metadata:
-  name: dev-team-c
-  labels:
-    size: large
 
