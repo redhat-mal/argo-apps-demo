@@ -1,0 +1,14 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev-team-a
+  labels:
+    size: small
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev-team-b
+  labels:
+    size: medium

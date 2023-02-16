@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
 - ./autoscaler
+- ./namespaces
 
 bases:
 - ../../common/namespace-config-operator/ 
