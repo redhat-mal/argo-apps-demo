@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   generation: 10
-  name: dev-team-b
+  name: dev-team-a
   namespace: openshift-gitops
 spec:
   destination:
