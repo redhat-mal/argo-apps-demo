@@ -4,7 +4,7 @@ metadata:
   name: spring-dev
 spec:
   destination:
-    namespace: team-a
+    namespace: dev-team-a
     server: https://kubernetes.default.svc
   ignoreDifferences:
     - group: apps
@@ -30,5 +30,5 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      #selfHeal: true
+      selfHeal: true
 
